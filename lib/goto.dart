@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class roomPage extends StatefulWidget {
+class gotoPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return RoomPageState();
+    return goPageState();
   }
 }
 
 
-class RoomPageState extends State {
+class goPageState extends State {
   final TextEditingController controller = TextEditingController();
 
 
@@ -31,7 +31,7 @@ class RoomPageState extends State {
                   },
                   child: const Text("戻る")),),
 
-            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/家.png'),),
+            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/太陽.png'),),
 
             Container(
                 alignment: Alignment.topCenter,

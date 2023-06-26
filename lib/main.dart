@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/goto.dart';
 import 'package:hello_flutter/in-the-room_page.dart';
 
 void main() {
@@ -101,15 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-          // タイトルの背景のカラー
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          // タイトル
-          title: const Text('親フラ感知',
-              style: TextStyle(
-                color: Colors.purple, //フォントサイズとカラー
-                fontSize: 16,
-              ))),*/
+
       body: CustomPaint(
         painter: BackgroundPainter(),
         child: SizedBox(
@@ -120,13 +113,23 @@ class _MyHomePageState extends State<MyHomePage> {
           //mainAxisAlignment: MainAxisAlignment.center,
 
           child:Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             // メソッドみたいなもの
             children: <Widget>[
               Padding(padding: const EdgeInsets.only(top: 100),child:Image.asset('images/65.png'),),
+              Padding(padding: const EdgeInsets.only(top:50,bottom:100)
+                ,child:ElevatedButton(
+                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 50)),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => gotoPage()));
+                    },
+                    child: const Text("自分が外に居る時")),),
+
 
               Padding(padding: const EdgeInsets.only(bottom: 100)
               ,child:ElevatedButton(
+                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 50)),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => roomPage()));
