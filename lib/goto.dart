@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/gotopeace.dart';
 
 class gotoPage extends StatefulWidget {
   @override
@@ -51,24 +52,19 @@ class goPageState extends State {
               ElevatedButton(onPressed: () {}, child: const Text('事前')),
               ElevatedButton(onPressed: () {}, child: const Text('開けた時')),
             ]),
-            const Text('ブザー',
+            const Text('嫌がらせ',
                 style: TextStyle(
                   fontSize: 36,
                 )),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton(onPressed: () {}, child: const Text('ON')),
+            Padding(padding: const EdgeInsets.only(bottom: 100)
+            ,child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              ElevatedButton(onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GotopeacePage()));
+              }, child: const Text('ON')),
               ElevatedButton(onPressed: () {}, child: const Text('OFF')),
-              ElevatedButton(onPressed: () {}, child: const Text('音量')),
             ]),
-            const Text('LED',
-                style: TextStyle(
-                  fontSize: 36,
-                )),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton(onPressed: () {}, child: const Text('ON')),
-              ElevatedButton(onPressed: () {}, child: const Text('OFF')),
-              ElevatedButton(onPressed: () {}, child: const Text('色')),
-            ]),
+            ),
           ],
         ),
       ),

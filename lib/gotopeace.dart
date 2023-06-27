@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/goto.dart';
 
-class roomPage extends StatefulWidget {
+class GotopeacePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return RoomPageState();
+    return peacePageState();
   }
 }
 
 
-class RoomPageState extends State {
+class peacePageState extends State {
   final TextEditingController controller = TextEditingController();
 
 
@@ -31,16 +32,16 @@ class RoomPageState extends State {
                   },
                   child: const Text("戻る")),),
 
-            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/家.png'),),
+            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/太陽.png'),),
 
-            //Container(
-                //alignment: Alignment.topCenter,
-
-             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-                const Text('必要',
-                style: TextStyle(
-                  fontSize: 36,
-                )),
+            Container(
+                alignment: Alignment.topCenter,
+                child: const Text('必要',
+                    style: TextStyle(
+                      fontSize: 36,
+                    ))),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              ElevatedButton.icon(onPressed: () {}, icon: const Icon(Icons.thumb_up),label: const Text('ON')),
               ElevatedButton(onPressed: () {}, child: const Text('OFF')),
             ]),
             const Text('時',
@@ -64,15 +65,16 @@ class RoomPageState extends State {
                 style: TextStyle(
                   fontSize: 36,
                 )),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Padding(padding: const EdgeInsets.only(bottom: 80)
+            ,child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               ElevatedButton(onPressed: () {}, child: const Text('ON')),
               ElevatedButton(onPressed: () {}, child: const Text('OFF')),
               ElevatedButton(onPressed: () {}, child: const Text('色')),
             ]),
+            ),
           ],
-
+        ),
       ),
-      )
     );
   }
 }

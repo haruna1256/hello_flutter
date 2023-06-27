@@ -96,9 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController controller = TextEditingController();
 
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,25 +113,31 @@ class _MyHomePageState extends State<MyHomePage> {
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             // メソッドみたいなもの
             children: <Widget>[
-              Padding(padding: const EdgeInsets.only(top: 100),child:Image.asset('images/65.png'),),
+              Padding(padding: const EdgeInsets.only(top: 100),child:Image.asset('images/親フラ感知.png'),),
               Padding(padding: const EdgeInsets.only(top:50,bottom:100)
                 ,child:ElevatedButton(
-                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 50)),
+                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => gotoPage()));
                     },
-                    child: const Text("自分が外に居る時")),),
+                    child: const Text("自分が外に居る時",
+                        style: TextStyle(
+                            fontSize: 20
+                        ) )),),
 
 
               Padding(padding: const EdgeInsets.only(bottom: 100)
               ,child:ElevatedButton(
-                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 50)),
+                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => roomPage()));
                     },
-                    child: const Text("自分が部屋に居る時")),),
+                    child: const Text("自分が部屋に居る時",
+                    style: TextStyle(
+                      fontSize: 20
+                    ),)),),
 
             ],
           )
