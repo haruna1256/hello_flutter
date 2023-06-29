@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/gotopeace.dart';
+import 'package:hello_flutter/gotoattack.dart';
 
 class gotoPage extends StatefulWidget {
   @override
@@ -36,15 +37,15 @@ class goPageState extends State {
 
             Container(
                 alignment: Alignment.topCenter,
-                child: const Text('必要',
-                    style: TextStyle(
-                      fontSize: 36,
-                    ))),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton.icon(onPressed: () {}, icon: const Icon(Icons.thumb_up),label: const Text('ON')),
+
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              const Text('必要',
+                  style: TextStyle(
+                    fontSize: 36,
+                  )),
               ElevatedButton(onPressed: () {}, child: const Text('OFF')),
-            ]),
-            const Text('時',
+            ])),
+            const Text('使うタイミング',
                 style: TextStyle(
                   fontSize: 36,
                 )),
@@ -60,9 +61,12 @@ class goPageState extends State {
             ,child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               ElevatedButton(onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GotopeacePage()));
+                    MaterialPageRoute(builder: (context) => GotoattackPage()));
               }, child: const Text('ON')),
-              ElevatedButton(onPressed: () {}, child: const Text('OFF')),
+              ElevatedButton(onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GotopeacePage()));
+              }, child: const Text('OFF')),
             ]),
             ),
           ],

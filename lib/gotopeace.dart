@@ -36,40 +36,22 @@ class peacePageState extends State {
 
             Container(
                 alignment: Alignment.topCenter,
-                child: const Text('必要',
+                child: const Text('親フラ感知',
                     style: TextStyle(
                       fontSize: 36,
                     ))),
             Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton.icon(onPressed: () {}, icon: const Icon(Icons.thumb_up),label: const Text('ON')),
-              ElevatedButton(onPressed: () {}, child: const Text('OFF')),
+              ElevatedButton(onPressed: () {}, child: const Text('する')),
+              ElevatedButton(onPressed: () {}, child: const Text('しない')),
             ]),
             const Text('時',
                 style: TextStyle(
                   fontSize: 36,
                 )),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton(onPressed: () {}, child: const Text('事前')),
-              ElevatedButton(onPressed: () {}, child: const Text('開けた時')),
-            ]),
-            const Text('ブザー',
-                style: TextStyle(
-                  fontSize: 36,
-                )),
-            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton(onPressed: () {}, child: const Text('ON')),
-              ElevatedButton(onPressed: () {}, child: const Text('OFF')),
-              ElevatedButton(onPressed: () {}, child: const Text('音量')),
-            ]),
-            const Text('LED',
-                style: TextStyle(
-                  fontSize: 36,
-                )),
             Padding(padding: const EdgeInsets.only(bottom: 80)
             ,child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              ElevatedButton(onPressed: () {}, child: const Text('ON')),
-              ElevatedButton(onPressed: () {}, child: const Text('OFF')),
-              ElevatedButton(onPressed: () {}, child: const Text('色')),
+              ElevatedButton(onPressed: () {}, child: const Text('事前')),
+              ElevatedButton(onPressed: () {}, child: const Text('開けた時')),
             ]),
             ),
           ],
