@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_flutter/goto.dart';
 import 'package:hello_flutter/in-the-room_page.dart';
+import 'package:hello_flutter/bluetooth_demo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -114,6 +115,18 @@ class _MyHomePageState extends State<MyHomePage> {
             // メソッドみたいなもの
             children: <Widget>[
               Padding(padding: const EdgeInsets.only(top: 100),child:Image.asset('images/親フラ感知.png'),),
+              Padding(padding: const EdgeInsets.only()
+                ,child:ElevatedButton(
+                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => BluetoothPage()));
+                    },
+                    child: const Text("bluetooth",
+                      style: TextStyle(
+                          fontSize: 20
+                      ),)),),
+
               Padding(padding: const EdgeInsets.only(top:50,bottom:100)
                 ,child:ElevatedButton(
                     style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
