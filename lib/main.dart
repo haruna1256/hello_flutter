@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/goto.dart';
-import 'package:hello_flutter/in-the-room_page.dart';
+import 'package:hello_flutter/go_to.dart';
+import 'package:hello_flutter/in_the_room_page.dart';
 import 'package:hello_flutter/bluetooth_demo.dart';
 
 void main() {
@@ -34,8 +34,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 
-
-
 class BackgroundPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
@@ -43,7 +41,7 @@ class BackgroundPainter extends CustomPainter {
     final paint = Paint();
 
     // 描画する色を青に設定します。これは上側の領域の色になります。
-    paint.color = const Color(0xFFFFACAC);
+    paint.color = const Color(0xFF53DAD2);
 
     // Pathオブジェクトを作成します。これは描画する形状の輪郭を定義します。
     var path = Path();
@@ -64,7 +62,7 @@ class BackgroundPainter extends CustomPainter {
     canvas.drawPath(path, paint);
 
     // 次に、描画する色を赤に設定します。これは下側の領域の色になります。
-    paint.color = const Color(0xFFFBFFB1);
+    paint.color = const Color(0xFFC3E4EB);
 
     // 新しいPathオブジェクトを作成します。
     path = Path();
@@ -102,61 +100,82 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
 
       body: CustomPaint(
-        painter: BackgroundPainter(),
-        child: SizedBox(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          //　均等に分ける　＝ spaceBetween
-          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //mainAxisAlignment: MainAxisAlignment.center,
-
-          child:Column(
+          painter: BackgroundPainter(),
+          child: SizedBox(
+            width: MediaQuery
+                .of(context)
+                .size
+                .width,
+            height: MediaQuery
+                .of(context)
+                .size
+                .height,
+            //　均等に分ける　＝ spaceBetween
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            // メソッドみたいなもの
-            children: <Widget>[
-              Padding(padding: const EdgeInsets.only(top: 100),child:Image.asset('images/親フラ感知.png'),),
-              Padding(padding: const EdgeInsets.only()
-                ,child:ElevatedButton(
-                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => BluetoothPage()));
-                    },
-                    child: const Text("bluetooth",
-                      style: TextStyle(
-                          fontSize: 20
-                      ),)),),
+            //mainAxisAlignment: MainAxisAlignment.center,
 
-              Padding(padding: const EdgeInsets.only(top:50,bottom:100)
-                ,child:ElevatedButton(
-                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => gotoPage()));
-                    },
-                    child: const Text("自分が外に居る時",
-                        style: TextStyle(
-                            fontSize: 20
-                        ) )),),
-
-
-              Padding(padding: const EdgeInsets.only(bottom: 100)
-              ,child:ElevatedButton(
-                    style: OutlinedButton.styleFrom(minimumSize: Size(200, 80)),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => roomPage()));
-                    },
-                    child: const Text("自分が部屋に居る時",
-                    style: TextStyle(
+            child: Column(
+              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // メソッドみたいなもの
+                children: <Widget>[
+            Padding(padding: const EdgeInsets.only(top: 100),
+            child: Image.asset('images/ロゴ.png'),),
+          Padding(padding: const EdgeInsets.only()
+            , child: ElevatedButton(
+                style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(200, 80)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => BluetoothPage()));
+                },
+                child: const Text("bluetooth",
+                  style: TextStyle(
                       fontSize: 20
-                    ),)),),
+                  ),)),),
 
-            ],
+          Padding(padding: const EdgeInsets.only(top: 50, bottom: 100)
+            , child: ElevatedButton(
+                style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(200, 80)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => GotoPage()));
+                },
+                child: const Text("自分が外に居る時",
+                  style: TextStyle(
+                      fontSize: 20
+                  ),)),),
+
+
+          Padding(padding: const EdgeInsets.only(bottom: 10)
+            , child: ElevatedButton(
+                style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(200, 80)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(
+                          builder: (context) => const RoomPage()));
+                },
+                child: const Text("自分が部屋に居る時",
+                  style: TextStyle(
+                      fontSize: 20
+                  ),)),),
+          Padding(padding: const EdgeInsets.only(top: 130,right:30,left:30)
+            ,
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly, children:[
+                  Expanded(
+                child: TextButton(onPressed: () {}, child: const Text("LINE Notify 入れた？")),),
+                Expanded(
+                child: TextButton(onPressed: () {}, child: const Text("操作が分からない")),),
+
+            ]),
           )
-        ),
+          ],
       ),
-
+    ),
+    ),
     );
   }
 }

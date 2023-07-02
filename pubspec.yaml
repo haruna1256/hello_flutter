@@ -65,6 +65,10 @@ flutter:
     - images/親フラ感知.png
     - images/家.png
     - images/太陽.png
+    - images/ロゴ.png
+    - images/家1.png
+    - images/太陽１.png
+    - images/太陽２.png
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

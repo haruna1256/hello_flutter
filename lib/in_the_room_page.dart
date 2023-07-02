@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class roomPage extends StatefulWidget {
+class RoomPage extends StatefulWidget {
+  const RoomPage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return RoomPageState();
@@ -21,17 +23,11 @@ class RoomPageState extends State {
 
         child: Column(
           //　均等に分ける　＝ spaceBetween
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(padding: const EdgeInsets.only(top: 60,right:450)
-              ,child:ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text("戻る")),),
 
-            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/家.png'),),
+            Padding(padding: const EdgeInsets.only(top: 30 ),child:Image.asset('images/家1.png',width:260,height: 260,),),
 
             //Container(
                 //alignment: Alignment.topCenter,

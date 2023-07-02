@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/goto.dart';
+//import 'package:hello_flutter/go_to.dart';　使ってない
 
-class GotoattackPage extends StatefulWidget {
+class AttackPage extends StatefulWidget {
+
   @override
   State<StatefulWidget> createState() {
-    return attackPageState();
+    return AttackPageState();
   }
 }
 
-class attackPageState extends State {
+class AttackPageState extends State {
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -40,15 +41,7 @@ class attackPageState extends State {
                 style: TextStyle(
                   fontSize: 36,
                 )),
-              ElevatedButton( child: const Text('OFF'),
-                // 押したときにエフェクトのみ色が変わる
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.grey[300],
-                  onPrimary: Colors.blueAccent,
-              ),
-              onPressed: () {},
-            ),
-
+              ElevatedButton( child: const Text('OFF'),onPressed: () {},),
             ])),
             const Text('使うタイミング',
                 style: TextStyle(

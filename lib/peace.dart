@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/goto.dart';
+//import 'package:hello_flutter/go_to.dart'; 使わない
 
-class GotopeacePage extends StatefulWidget {
+class PeacePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return peacePageState();
+    return PeacePageState();
   }
 }
 
 
-class peacePageState extends State {
+class PeacePageState extends State {
   final TextEditingController controller = TextEditingController();
 
 

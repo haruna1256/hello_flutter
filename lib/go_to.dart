@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/gotopeace.dart';
-import 'package:hello_flutter/gotoattack.dart';
+import 'package:hello_flutter/peace.dart';
+import 'package:hello_flutter/attack.dart';
 
-class gotoPage extends StatefulWidget {
+class GotoPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return goPageState();
+    return GoPageState();
   }
 }
 
 
-class goPageState extends State {
+class GoPageState extends State {
   final TextEditingController controller = TextEditingController();
 
 
@@ -26,14 +26,8 @@ class goPageState extends State {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(padding: const EdgeInsets.only(top: 60,right:450)
-              ,child:ElevatedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text("戻る")),),
 
-            Padding(padding: const EdgeInsets.only(top: 0),child:Image.asset('images/太陽.png'),),
+            Padding(padding: const EdgeInsets.only(top: 30 ),child:Image.asset('images/太陽２.png',width:260,height: 260,),),
 
             Container(
                 alignment: Alignment.topCenter,
@@ -61,16 +55,47 @@ class goPageState extends State {
             ,child:Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
               ElevatedButton(onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GotoattackPage()));
+                    MaterialPageRoute(builder: (context) => AttackPage()));
               }, child: const Text('ON')),
               ElevatedButton(onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => GotopeacePage()));
+                    MaterialPageRoute(builder: (context) => PeacePage()));
               }, child: const Text('OFF')),
             ]),
             ),
           ],
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,  // ボタンの位置をセンターに
+      floatingActionButton: FloatingActionButton(
+        //backgroundColor: Theme.of(context).accentColor,
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 80,
+        child: BottomNavigationBar(
+        // フッターメニューのアイテム一覧
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+
+            icon: ImageIcon(
+              AssetImage('images/家1.png'),
+              color: Color(0xFFC3E4EB),
+              size: 40,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: ImageIcon(
+              AssetImage('images/太陽２.png'),
+              color: Color(0xFFC3E4EB),
+              size: 40,
+            ),
+            label: 'Profile',
+          ),
+        ],
+      ),
       ),
     );
   }
